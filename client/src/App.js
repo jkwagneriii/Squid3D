@@ -44,7 +44,7 @@ const SpinningText = ({position, args, color, speed}) => {
       color={color} 
       speed={speed} 
       factor={0.1}
-      roughness={0.1}
+      smoothing={1}
       metalness={0.5} />
     </a.mesh>
   )
@@ -55,10 +55,10 @@ function App() {
   return (
     <>
       <Canvas shadowMap colorManagement camera={{position: [5, 2, 20], fov: 80}}>
-        <ambientLight intensity={0.3}/>
+        <ambientLight intensity={0.1}/>
         <directionalLight 
         castShadow
-        position={[0, 10, 0]} 
+        position={[3, 5, 5]} 
         intensity={3}
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
@@ -70,14 +70,15 @@ function App() {
         />
         <pointLight position={[-10, 0, -20]} intensity={0.5}/>
         <pointLight position={[0, -10, 0]} intensity={1.5}/>
+        <pointLight position={[-20, 5, 10]} intensity={0.2}/>
 
         <group>
           <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -3, 0]}>
             <planeBufferGeometry attach="geometry" args={[100, 100]}/>
             <shadowMaterial attach="material" opacity={0.3} />
           </mesh>
-        <SpinningText args={'Squid'} position={[-5, 3, 0]} color="red" speed={3}/>
-        <SpinningText args={'Swim'} position={[-1, -1, 3]} color="red" speed={3}/>
+        <SpinningText args={'Squid'} position={[-5, 3, 0]} color="black" speed={3}/>
+        <SpinningText args={'Swim'} position={[-1, -1, 3]} color="red" speed={6}/>
         </group>
 
         <group>
