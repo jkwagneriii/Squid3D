@@ -3,11 +3,11 @@ import './App.scss';
 import { Canvas, useFrame } from 'react-three-fiber'
 import * as THREE from 'three';
 
-import { softShadows, MeshWobbleMaterial, OrbitControls } from "drei";
+import { softShadows, MeshWobbleMaterial, OrbitControls, Sphere } from "drei";
 
 import { useSpring, a} from "react-spring/three"
 
-import Terror from './Gendry_Regular.json'
+import Terror from './Theater_Bold.json'
 
 softShadows();
 
@@ -23,7 +23,7 @@ const SpinningText = ({position, args, color, speed}) => {
     height: 1
   };
 
-  useFrame(() => (mesh.current.rotation.x =+  0.01 ))
+  useFrame(() => (mesh.current.rotation.y =+  0.01 ))
 
   const [expand, setExpand] = useState(false)
 
@@ -43,8 +43,7 @@ const SpinningText = ({position, args, color, speed}) => {
       attach='material' 
       color={color} 
       speed={speed} 
-      factor={0.1}
-      smoothing={1}
+      factor={0.05}
       metalness={0.5} />
     </a.mesh>
   )
@@ -54,12 +53,12 @@ function App() {
 
   return (
     <>
-      <Canvas shadowMap colorManagement camera={{position: [5, 2, 20], fov: 80}}>
+      <Canvas shadowMap colorManagement camera={{position: [3, 3, 15], fov: 70}}>
         <ambientLight intensity={0.1}/>
         <directionalLight 
         castShadow
-        position={[3, 5, 5]} 
-        intensity={3}
+        position={[5, 15, 20]} 
+        intensity={2}
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
         shadow-camera-far={50}
@@ -73,12 +72,14 @@ function App() {
         
 
         <group>
-          <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -3, 0]}>
+          <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -5, 0]}>
             <planeBufferGeometry attach="geometry" args={[100, 100]}/>
             <shadowMaterial attach="material" opacity={0.3} />
           </mesh>
-        <SpinningText args={'SQUID'} position={[-5, 3, 0]} color="white" speed={3}/>
-        <SpinningText args={'SWIM'} position={[-1, -1, 3]} color="white" speed={6}/>
+          <group>
+          <SpinningText args={'SQUID'} position={[-5, 4, -2]} color="white" speed={2}/>
+          <SpinningText args={'SWIM'} position={[-1, -1, 3]} color="white" speed={4}/>
+          </group>  
         </group>
 
         <group>
