@@ -77,8 +77,8 @@ function App() {
             <shadowMaterial attach="material" opacity={0.3} />
           </mesh>
           <group>
-          <SpinningText args={'SQUID'} position={[-5, 4, -2]} color="white" speed={2}/>
-          <SpinningText args={'SWIM'} position={[-1, -1, 3]} color="white" speed={4}/>
+          <SpinningText args={'SQUID'} position={[-5, 4, -2]} color="black" speed={2}/>
+          <SpinningText args={'SWIM'} position={[-1, -1, 3]} color="black" speed={4}/>
           </group>  
         </group>
 
