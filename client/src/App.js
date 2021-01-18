@@ -70,15 +70,15 @@ function App() {
         />
         <pointLight position={[-10, 0, -20]} intensity={0.5}/>
         <pointLight position={[0, -10, 0]} intensity={1.5}/>
-        <pointLight position={[-20, 5, 10]} intensity={0.2}/>
+        
 
         <group>
           <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -3, 0]}>
             <planeBufferGeometry attach="geometry" args={[100, 100]}/>
             <shadowMaterial attach="material" opacity={0.3} />
           </mesh>
-        <SpinningText args={'Squid'} position={[-5, 3, 0]} color="black" speed={3}/>
-        <SpinningText args={'Swim'} position={[-1, -1, 3]} color="red" speed={6}/>
+        <SpinningText args={'SQUID'} position={[-5, 3, 0]} color="white" speed={3}/>
+        <SpinningText args={'SWIM'} position={[-1, -1, 3]} color="white" speed={6}/>
         </group>
 
         <group>
