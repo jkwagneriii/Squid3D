@@ -19,7 +19,7 @@ const SpinningText = ({position, args, color, speed}) => {
   // configure font geometry
   const textOptions = {
     font,
-    size: 4,
+    size: 2,
     height: 1
   };
 
@@ -73,12 +73,13 @@ function App() {
 
         <group>
           <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -5, 0]}>
-            <planeBufferGeometry attach="geometry" args={[100, 100]}/>
+            <planeBufferGeometry attach="geometry" args={[500, 500]}/>
             <shadowMaterial attach="material" opacity={0.3} />
           </mesh>
           <group>
-          <SpinningText args={'SQUID'} position={[-5, 4, -2]} color="black" speed={2}/>
-          <SpinningText args={'SWIM'} position={[-1, -1, 3]} color="black" speed={4}/>
+          <SpinningText args={'REACT'} position={[-3, 2, -2]} color="#B8D9FF" speed={2}/>
+          <SpinningText args={'THREE'} position={[0, 0, 0]} color="#B8FFBA" speed={4}/>
+          <SpinningText args={'FIBER'} position={[3, -2, 2]} color="#FFBAFD" speed={4}/>
           </group>  
         </group>
 
