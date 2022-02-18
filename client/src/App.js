@@ -77,9 +77,9 @@ function App() {
             <shadowMaterial attach="material" opacity={0.3} />
           </mesh>
           <group>
-          <SpinningText args={'REACT'} position={[-3, 2, -2]} color="#B8D9FF" speed={2}/>
-          <SpinningText args={'THREE'} position={[0, 0, 0]} color="#B8FFBA" speed={4}/>
-          <SpinningText args={'FIBER'} position={[3, -2, 2]} color="#FFBAFD" speed={4}/>
+          <SpinningText args={'CGI'} position={[-3, 2, -2]} color="#B8D9FF" speed={2}/>
+          <SpinningText args={'DIGITAL'} position={[0, 0, 0]} color="#B8FFBA" speed={4}/>
+          <SpinningText args={'VIDEO EXPERIENCE'} position={[3, -2, 2]} color="#FFBAFD" speed={4}/>
           </group>  
         </group>
 
